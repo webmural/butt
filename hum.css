@@ -19,7 +19,7 @@ h1 {
   align-items: center;
   justify-content: center;
   display: flex;
-  margin: auto;
+  margin: 0;
   min-height: 100vh;
   order: 101;
 }
@@ -43,10 +43,6 @@ del {
   text-decoration-style: double;
 }
 
-:focus {
-  outline: thick dotted;
-}
-
 p {
   text-transform: lowercase;
 }
@@ -57,34 +53,36 @@ p {
   display: flex;
   flex-direction: row;
   margin: auto;
-  padding: 1em;
-  max-width: 66vw;
+  padding: 1ch;
+  max-width: 62vw;
   min-height: 100vh;
 }
 
 .caterpillar {
   align-items: center;
-  contain: content;
+  box-sizing: border-box;
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   margin: auto;
-  margin-bottom: 1em;
-  padding: 1em;
+  max-width: 62vw;
   min-height: 100vh;
 }
 
+.caterpillar p {
+  margin: auto;
+  flex-basis: 10%;
+}
+
 @media (orientation: portrait) {
-  .papillon { 
+  .papillon {
+    justify-content: center;
     flex-direction: column;
     max-width: none;
   }
 
-  .caterpillar {
-    display: flow-root;
-  }
-
-  p {
-    display: contents;
+  .capo {
+    align-items: flex-start;
+    flex-flow: column;
   }
 
   h1 {
